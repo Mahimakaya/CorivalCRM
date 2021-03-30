@@ -1,0 +1,46 @@
+#opennav {
+  /* padding: 4px; */
+  font-weight: bold;
+  /* margin-top: 8px; */
+
+}
+button#opennav
+{
+  text-align: left; 
+
+}
+.navpage {
+  padding: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a {
+  color: black;
+  margin: 2px;
+}
+
+a:hover {
+  background-color: rgb(91, 162, 224);
+  border: 1px rgb(1, 0, 73) solid;
+  border-radius: 7px;
+  padding: 3px;
+  margin: 2px;
+  color: azure;
+}
+a:active {
+  background-color: rgb(6, 50, 88);
+}
+
+li {
+  list-style-type: none;
+  color: black;
+}
+
+.navsubpage {
+  padding: 2px;
+  white-space: nowrap;
+  padding: 2px;
+  text-decoration: none;
+}
+ 

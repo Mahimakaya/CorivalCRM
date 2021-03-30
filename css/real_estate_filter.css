@@ -1,0 +1,42 @@
+#open_pms {
+    font-weight: bold;
+  } 
+
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar 
+  {
+    max-height: 300px;
+    overflow-y: auto;
+
+  }
+
+  #pms_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+

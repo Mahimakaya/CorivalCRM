@@ -1,0 +1,54 @@
+#open_technology {
+    /* padding: 4px;  */
+    font-weight: bold;
+    /* margin-top: 8px; */
+  } 
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #employees_filterbar {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #ats_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #hrms_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #technology_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }

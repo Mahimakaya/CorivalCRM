@@ -1,0 +1,49 @@
+#open_technology {
+    font-weight: bold;
+  } 
+
+#open_remark {
+    font-weight: bold;
+  } 
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar 
+  {
+    max-height: 300px;
+    overflow-y: auto;
+
+  }
+
+  #technology_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #remark_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }

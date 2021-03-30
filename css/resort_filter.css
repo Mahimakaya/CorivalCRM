@@ -1,0 +1,112 @@
+#open_technology {
+    font-weight: bold;
+  }
+
+#open_amenity {
+    font-weight: bold;
+  }
+  
+  .filterbtn {
+    text-align: left;
+  }
+  
+  #title_filterbar {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  
+  #hrms_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #ats_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #erp_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #pos_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #rms_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #cm_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #pms_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #ibe_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #crs_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #pool_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #activities_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #bar_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #golf_course_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #gym_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #spa_option {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  

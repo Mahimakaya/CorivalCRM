@@ -1,0 +1,55 @@
+#open_technology {
+    font-weight: bold;
+  } 
+
+#open_product_category {
+    font-weight: bold;
+  } 
+
+#open_selling_platform {
+    font-weight: bold;
+  } 
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar 
+  {
+    max-height: 300px;
+    overflow-y: auto;
+
+  }
+
+  #selling_platform_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #product_category_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+

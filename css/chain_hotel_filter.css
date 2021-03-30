@@ -1,0 +1,85 @@
+#open_technology {
+    font-weight: bold;
+  } 
+
+#open_star_rating {
+    font-weight: bold;
+  } 
+
+#open_hotel_type {
+    font-weight: bold;
+  } 
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar 
+  {
+    max-height: 300px;
+    overflow-y: auto;
+
+  }
+  
+  #star_rating_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #hotel_type_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #pms_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #ibe_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #cms_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #crm_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #crs_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }

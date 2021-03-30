@@ -1,0 +1,79 @@
+#open_technology {
+    font-weight: bold;
+  } 
+
+#open_type_of_organisation {
+    font-weight: bold;
+  } 
+
+#open_school_college {
+    font-weight: bold;
+  } 
+
+
+  .filterbtn
+  {
+    text-align: left;
+  }
+
+  #title_filterbar 
+  {
+    max-height: 300px;
+    overflow-y: auto;
+
+  }
+
+  #type_of_organisation_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
+  #school_college_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
+  #type_of_organisation_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
+  #type_of_organisation_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
+  #type_of_organisation_filterbar
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  
+  #country_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #state_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  #city_option
+  {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+
