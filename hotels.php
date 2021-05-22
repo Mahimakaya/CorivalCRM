@@ -13,12 +13,12 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-<!-- jquery cdn  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- jquery cdn  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 
-<!-- data table css -->
+  <!-- data table css -->
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="css/table.css">
 
@@ -30,23 +30,102 @@
   <link rel="stylesheet" href="css/hotel_filter.css">
   <script src="js/hotel_filter.js"></script>
 
+
+
+  <style>
+    #modal {
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      overflow-y: scroll;
+      display: none;
+    }
+
+    #modal-form {
+      background: #fff;
+      width: 60%;
+      position: relative;
+      top: 10%;
+      left: calc(50% - 30%);
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #close-btn {
+      background: red;
+      color: white;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      cursor: pointer;
+    }
+
+    #insert-modal {
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      overflow-y: scroll;
+      display: none;
+    }
+
+    #insert-modal-form {
+      background: #fff;
+      width: 60%;
+      position: relative;
+      top: 10%;
+      left: calc(50% - 30%);
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #insert-close-btn {
+      background: red;
+      color: white;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      cursor: pointer;
+    }
+  </style>
+
   <title>Hotel</title>
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3" >
-       <?php
+      <div class="col-sm-3 mainnav">
+        <?php
         include "includes/navigation.php";
         include "includes/hotel_filter.php";
-       ?>
-       
+        ?>
+
       </div>
-      <div class="col-sm-9" >
+      <div class="col-sm-9 maintable">
+
+        <h4 class="m-3">Industry : Hospatility/Hotels</h4>
+
 
         <!-- table start-->
-        <table id="myTable" class="table table-striped table-bordered" >
+        <table id="myTable" class="table table-striped table-bordered">
 
           <!-- table head start -->
           <thead>
@@ -85,6 +164,8 @@
               <th scope="col">Facebook URL</th>
               <th scope="col">Alexa Rank</th>
               <th scope="col">Monthly Visitors</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
 
@@ -134,6 +215,8 @@
             <td>" . $row['facebook_url'] . "</td>
             <td>" . $row['alexa_rank'] . "</td>
             <td>" . $row['monthly_visitor'] . "</td>
+            <td><button type='button' class='edit-btn btn btn-sm btn-info p-1' data-eid =  " . $row['data_id'] . ">Update</button></td>
+            <td><button type='button' class='delete-btn btn btn-sm btn-danger p-1' data-id =  " . $row['data_id'] . ">Delete</button></td>
            
 
           </tr>";
@@ -149,7 +232,175 @@
 
     </div>
 
+    <!-- update modal  -->
+    <div id="modal">
+      <div id="modal-form">
+        <h4 class="text-center">Update Data</h4>
+        <hr>
+
+        <table id="update-form" cellpadding="2px" width="100%">
+
+        </table>
+        <div id="close-btn">X</div>
+
+      </div>
+    </div>
+
+    <!-- insert modal  -->
+
+    <div id="insert-modal">
+      <div id="insert-modal-form">
+        <h4 class="text-center">Insert New Data into Hotel</h4>
+        <hr>
+
+        <table id="insert-form" cellpadding="2px" width="100%">
+          <form action="php/hotel_ajax.php" method="post">
+            <tr>
+              <td colspan='4' class='text-center'>
+                <h5>Technology</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>HRMS:</td>
+              <td><input type='text' name='insert-hrms'></td>
+              <td>ATS:</td>
+              <td><input type='text' name='insert-ats'></td>
+            </tr>
+            <tr>
+              <td>CRM:</td>
+              <td><input type='text' name='insert-crm'></td>
+              <td>ERP:</td>
+              <td><input type='text' name='insert-erp'></td>
+            </tr>
+            <tr>
+              <td>POS:</td>
+              <td><input type='text' name='insert-pos'></td>
+              <td>RMS:</td>
+              <td><input type='text' name='insert-rms'></td>
+            </tr>
+            <tr>
+              <td>CM:</td>
+              <td><input type='text' name='insert-cm'></td>
+              <td>PMS:</td>
+              <td><input type='text' name='insert-pms'></td>
+            </tr>
+            <tr>
+              <td>IBE:</td>
+              <td><input type='text' name='insert-ibe'></td>
+              <td>CRS:</td>
+              <td><input type='text' name='insert-crs'></td>
+            </tr>
+
+            <tr>
+              <td>Hotel Name: </td>
+              <td colspan='3'><input type='text' name='insert-hname'></td>
+            </tr>
+
+
+            <tr>
+              <td>Website</td>
+              <td colspan='3'><input type='text' name='insert-website'></td>
+            </tr>
+            <tr>
+              <td colspan='4'>
+                <h5 class='text-center'>Address</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>Street:</td>
+              <td colspan='3'> <input type='text' name='insert-street'></td>
+            </tr>
+            <tr>
+              <td>City:</td>
+              <td><input type='text' name='insert-city'></td>
+              <td>State/Province:</td>
+              <td><input type='text' name='insert-state'></td>
+            </tr>
+            <tr>
+              <td>ZIP Code:</td>
+              <td><input type='text' name='insert-zipcode'></td>
+              <td>Country:</td>
+              <td><input type='text' name='insert-country'></td>
+            </tr>
+            <tr>
+              <td colspan='4'>
+                <h5 class='text-center'>Person Information</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>Prefix</td>
+              <td><input type='text' name='insert-prefix'></td>
+              <td>Title</td>
+              <td><input type='text' name='insert-title'></td>
+            </tr>
+            <tr>
+              <td>First Name</td>
+              <td><input type='text' name='insert-fname'></td>
+              <td>Last Name</td>
+              <td><input type='text' name='insert-lname'></td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td colspan='3'><input type='text' name='insert-email'></td>
+            </tr>
+            <tr>
+              <td>Contact Number:</td>
+              <td colspan='3'><input type='text' name='insert-contact'></td>
+            </tr>
+            <tr>
+              <td colspan='4'>
+                <h5 class='text-center'>Hotel Specifications</h5>
+              </td>
+            </tr>
+            <tr>
+              <td>No. of Rooms</td>
+              <td><input type='text' name='insert-room'></td>
+              <td>Hotel Class</td>
+              <td><input type='text' name='insert-class'></td>
+            </tr>
+            <tr>
+              <td>ADR</td>
+              <td><input type='text' name='insert-adr'></td>
+              <td>Type of Hotel:</td>
+              <td><input type='text' name='insert-type'></td>
+            </tr>
+            <tr>
+              <td>Services:</td>
+              <td colspan='3'><input type='text' services name='insert-services'></td>
+            </tr>
+            <tr>
+              <td>Ownership:</td>
+              <td><input type='text' name='insert-ownership'></td>
+              <td>Chain Name:</td>
+              <td><input type='text' name='insert-chain'></td>
+            </tr>
+            <tr>
+              <td>Facebook URL:</td>
+              <td colspan='3'><input type='text' name='insert-fburl'></td>
+            </tr>
+            <tr>
+              <td>Alexa Rank:</td>
+              <td><input type='text' name='insert-alexa'></td>
+              <td>monthly Visitor:</td>
+              <td><input type='text' name='insert-visitors'></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><input type='submit' name='insert-submit' id='insert-submit' value='Insert New Data'></td>
+            </tr>
+          </form>
+
+        </table>
+        <div id="insert-close-btn">X</div>
+
+      </div>
+    </div>
+
   </div>
+
+
 
 
 
@@ -195,8 +446,172 @@
   <script>
     $(document).ready(function() {
       $('#myTable').DataTable();
+
+      // Delete 
+      $(document).on("click", ".delete-btn", function(e) {
+        var data_id = $(this).data("id");
+        var element = this;
+        var dlt_action = "delete";
+        var conf = confirm("Dou want to delete this permanently");
+
+        if (conf == true) {
+          $.ajax({
+            url: "php/hotel_ajax.php",
+            type: "POST",
+            data: {
+              data_id: data_id,
+              dlt_action: dlt_action
+            },
+            success: function(data) {
+              if (data == 1) {
+                $(element).closest("tr").fadeOut();
+                location.reload();
+              } else {
+                alert("Could not delete");
+              }
+            }
+          });
+
+        }
+
+
+      });
+
+      // update 
+      $(document).on("click", ".edit-btn", function(e) {
+        $("#modal").show();
+        var data_eid = $(this).data("eid");
+        var formfill = "formfill";
+
+        $.ajax({
+          url: "php/hotel_ajax.php",
+          method: "POST",
+          data: {
+            eid: data_eid,
+            formfill: formfill
+          },
+          success: function(data) {
+            $("#modal #update-form").html(data);
+          }
+
+        });
+
+      });
+
+      // hide modal 
+      $("#close-btn").on("click", function() {
+        $("#modal").hide();
+      })
+
+      // save updated data
+
+      $(document).on("click", "#update-submit", function(e) {
+        var data_id = $("#data-id").val();
+        var hrms = $("#update-hrms").val();
+        var ats = $("#update-ats").val();
+        var crm = $("#update-crm").val();
+        var erp = $("#update-erp").val();
+        var pos = $("#update-pos").val();
+        var rms = $("#update-rms").val();
+        var cm = $("#update-cm").val();
+        var pms = $("#update-pms").val();
+        var ibe = $("#update-ibe").val();
+        var crs = $("#update-crs").val();
+        var hotel_name = $("#update-hname").val();
+        var website = $("#update-website").val();
+        var country = $("#update-country").val();
+        var street = $("#update-street").val();
+        var city = $("#update-city").val();
+        var state = $("#update-state").val();
+        var zipcode = $("#update-zipcode").val();
+        var prefix = $("#update-prefix").val();
+        var first_name = $("#update-fname").val();
+        var last_name = $("#update-lname").val();
+        var title = $("#update-title").val();
+        var email = $("#update-email").val();
+        var contact_number = $("#update-contact").val();
+        var number_of_rooms = $("#update-room").val();
+        var hotel_class = $("#update-class").val();
+        var adr = $("#update-adr").val();
+        var services = $("#update-services").val();
+        var type_of_hotel = $("#update-type").val();
+        var ownership = $("#update-ownership").val();
+        var chain_name = $("#update-chain").val();
+        var facebook_url = $("#update-fburl").val();
+        var alexa_rank = $("#update-alex").val();
+        var monthly_visitor = $("#update-visitors").val();
+
+        var update = "update";
+
+        $.ajax({
+          url: "php/hotel_ajax.php",
+          method: "POST",
+          data: {
+            update: update,
+            data_id: data_id,
+            hrms: hrms,
+            ats: ats,
+            crm: crm,
+            erp: erp,
+            pos: pos,
+            rms: rms,
+            cm: cm,
+            pms: pms,
+            ibe: ibe,
+            crs: crs,
+            hotel_name: hotel_name,
+            website: website,
+            country: country,
+            street: street,
+            city: city,
+            state: state,
+            zipcode: zipcode,
+            prefix: prefix,
+            first_name: first_name,
+            last_name: last_name,
+            title: title,
+            email: email,
+            contact_number: contact_number,
+            number_of_rooms: number_of_rooms,
+            hotel_class: hotel_class,
+            adr: adr,
+            services: services,
+            type_of_hotel: type_of_hotel,
+            ownership: ownership,
+            chain_name: chain_name,
+            facebook_url: facebook_url,
+            alexa_rank: alexa_rank,
+            monthly_visitor: monthly_visitor
+          },
+
+          success: function(data) {
+            $("#modal").hide();
+            location.reload();
+          }
+        });
+      });
+
+      // insert functionality 
+
+      // hide modal 
+      $("#insert-close-btn").on("click", function() {
+        $("#insert-modal").hide();
+      })
+
+      $(document).on("click", "#insert-btn", function(e) {
+        $("#insert-modal").show();
+      });
+
+
+
+
+
+
+
+
     });
   </script>
+
 </body>
 
 </html>

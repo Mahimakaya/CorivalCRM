@@ -9,7 +9,7 @@ $(document).ready(function () {
     $("#location_filterbar").hide(500);
     $("#title_filterbar").hide(500);
     $("#remark_filterbar").hide(500);
-    $("#property_filterbar").hide(500); 
+    $("#property_filterbar").hide(500);
 
 
   });

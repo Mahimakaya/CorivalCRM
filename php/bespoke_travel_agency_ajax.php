@@ -50,7 +50,7 @@ if (isset($_POST['action'])) {
         $sno = 0;
         while ($row = mysqli_fetch_assoc($result)) {
             $sno = $sno + 1;
-            $output .= "<tr>
+            $output .= $sql."<tr>
             <th scope='row'>" . $sno . "</th>
             <td>" . $row['technology'] . "</td>
             <td>" . $row['remark'] . "</td>
