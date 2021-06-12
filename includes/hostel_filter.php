@@ -162,6 +162,14 @@
     </ul>
 </div>
 
+<div class="d-grid gap-2">
+    <a href="hostel.php" id="clear_filter" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Clear Filters</a>
+</div>
+
+<div class="d-grid gap-2">
+    <a  id="insert-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Insert New Data</a>
+</div>
+
 <!-- ========================================================= -->
 
 <script>

@@ -175,143 +175,148 @@ if (isset($_POST['formfill'])) {
   if (mysqli_num_rows($result3) > 0) {
     while ($row2 = mysqli_fetch_assoc($result3)) {
       $output2 .= "
-            <tr>
-            <td colspan='4' class='text-center'>
-              <h5>Technology</h5>
-            </td>
-          </tr>
-          <tr>
-            <td>HRMS:</td>
-            <td><input type='text' value = '{$row2["hrms"]}' id='update-hrms'></td>
-            <td>ATS:</td>
-            <td><input type='text' value = '{$row2["ats"]}' id='update-ats'></td>
-          </tr>
-          <tr>
-            <td>CRM:</td>
-            <td><input type='text' value = '{$row2["crm"]}' id='update-crm'></td>
-            <td>ERP:</td>
-            <td><input type='text' value = '{$row2["erp"]}' id='update-erp'></td>
-          </tr>
-          <tr>
-            <td>POS:</td>
-            <td><input type='text' value = '{$row2["pos"]}' id='update-pos'></td>
-            <td>RMS:</td>
-            <td><input type='text' value = '{$row2["rms"]}' id='update-rms'></td>
-          </tr>
-          <tr>
-            <td>CM:</td>
-            <td><input type='text' value = '{$row2["cm"]}' id='update-cm'></td>
-            <td>PMS:</td>
-            <td><input type='text' value = '{$row2["pms"]}' id='update-pms'></td>
-          </tr>
-          <tr>
-            <td>IBE:</td>
-            <td><input type='text' value = '{$row2["ibe"]}' id='update-ibe'></td>
-            <td>CRS:</td>
-            <td><input type='text' value = '{$row2["crs"]}' id='update-crs'></td>
-          </tr>
+      <tr>
+      <td colspan='4' class='text-center'>
+        <h5>Technology</h5>
+      </td>
+    </tr>
+    <tr>
+      <td>HRMS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["hrms"]}' id='update-hrms'></td>
+      <td>ATS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["ats"]}' id='update-ats'></td>
+    </tr>
+    <tr>
+      <td>CRM:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["crm"]}' id='update-crm'></td>
+      <td>ERP:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["erp"]}' id='update-erp'></td>
+    </tr>
+    <tr>
+      <td>POS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["pos"]}' id='update-pos'></td>
+      <td>RMS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["rms"]}' id='update-rms'></td>
+    </tr>
+    <tr>
+      <td>CM:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["cm"]}' id='update-cm'></td>
+      <td>PMS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["pms"]}' id='update-pms'></td>
+    </tr>
+    <tr>
+      <td>IBE:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["ibe"]}' id='update-ibe'></td>
+      <td>CRS:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["crs"]}' id='update-crs'></td>
+    </tr>
+    <tr>
+    <td colspan='4' class='text-center'>
+      <h5>Hotel Info</h5>
+    </td>
+  </tr>
 
-          <tr>
-            <td>Hotel Name: </td>
-            <td colspan='3'><input type='text' value = '{$row2["hotel_name"]}' id='update-hname'></td>
-          </tr>
+    <tr>
+      <td>Hotel Name: </td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["hotel_name"]}' id='update-hname'></td>
+    </tr>
 
 
-          <tr>
-            <td>Website</td>
-            <td colspan='3'><input type='text' value = '{$row2["website"]}' id='update-website'></td>
-          </tr>
-          <tr>
-            <td colspan='4'>
-              <h5 class='text-center'>Address</h5>
-            </td>
-          </tr>
-          <tr>
-            <td>Street:</td>
-            <td colspan='3'> <input type='text' value = '{$row2["street"]}' id='update-street'></td>
-          </tr>
-          <tr>
-            <td>City:</td>
-            <td><input type='text' value = '{$row2["city"]}' id='update-city'></td>
-            <td>State/Province:</td>
-            <td><input type='text' value = '{$row2["state"]}' id='update-state'></td>
-          </tr>
-          <tr>
-            <td>ZIP Code:</td>
-            <td><input type='text' value = '{$row2["zipcode"]}' id='update-zipcode'></td>
-            <td>Country:</td>
-            <td><input type='text' value = '{$row2["country"]}' id='update-country'></td>
-          </tr>
-          <tr>
-            <td colspan='4'>
-              <h5 class='text-center'>Person Information</h5>
-            </td>
-          </tr>
-          <tr>
-            <td>Prefix</td>
-            <td><input type='text' value = '{$row2["prefix"]}' id='update-prefix'></td>
-            <td>Title</td>
-            <td><input type='text' value = '{$row2["title"]}' id='update-title'></td>
-          </tr>
-          <tr>
-            <td>First Name</td>
-            <td><input type='text' value = '{$row2["first_name"]}' id='update-fname'></td>
-            <td>Last Name</td>
-            <td><input type='text' value = '{$row2["last_name"]}' id='update-lname'></td>
-          </tr>
-          <tr>
-            <td>Email:</td>
-            <td colspan='3'><input type='text' value = '{$row2["email"]}' id='update-email'></td>
-          </tr>
-          <tr>
-            <td>Contact Number:</td>
-            <td colspan='3'><input type='text' value = '{$row2["contact_number"]}' id='update-contact'></td>
-          </tr>
-          <tr>
-            <td colspan='4'>
-              <h5 class='text-center'>Hotel Specifications</h5>
-            </td>
-          </tr>
-          <tr>
-            <td>No. of Rooms</td>
-            <td><input type='text' value = '{$row2["number_of_rooms"]}' id='update-room'></td>
-            <td>Hotel Class</td>
-            <td><input type='text' value = '{$row2["hotel_class"]}' id='update-class'></td>
-          </tr>
-          <tr>
-            <td>ADR</td>
-            <td><input type='text' value = '{$row2["adr"]}' id='update-adr'></td>
-            <td>Type of Hotel:</td>
-            <td><input type='text' value = '{$row2["type_of_hotel"]}' id='update-type'></td>
-          </tr>
-          <tr>
-            <td>Services:</td>
-            <td colspan='3'><input type='text' value = '{$row2["services"]}' id='update-services'></td>
-          </tr>
-          <tr>
-            <td>Ownership:</td>
-            <td><input type='text' value = '{$row2["ownership"]}' id='update-ownership'></td>
-            <td>Chain Name:</td>
-            <td><input type='text' value = '{$row2["chain_name"]}' id='update-chain'></td>
-          </tr>
-          <tr>
-            <td>Facebook URL:</td>
-            <td colspan='3'><input type='text' value = '{$row2["facebook_url"]}' id='update-fburl'></td>
-          </tr>
-          <tr>
-            <td>Alexa Rank:</td>
-            <td><input type='text' value = '{$row2["alexa_rank"]}' id='update-alexa'></td>
-            <td>monthly Visitor:</td>
-            <td><input type='text' value = '{$row2["monthly_visitor"]}' id='update-visitors'></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-           <td><input type='hidden' value = '{$row2["data_id"]}' id ='data-id' ></td>
-            <td><input type='submit' id='update-submit' value='Update'></td>
-          </tr>
+    <tr>
+      <td>Website</td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["website"]}' id='update-website'></td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        <h5 class='text-center'>Address</h5>
+      </td>
+    </tr>
+    <tr>
+      <td>Street:</td>
+      <td colspan='3'> <input type='text' style='width: 100%;' value = '{$row2["street"]}' id='update-street'></td>
+    </tr>
+    <tr>
+      <td>City:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["city"]}' id='update-city'></td>
+      <td>State/Province:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["state"]}' id='update-state'></td>
+    </tr>
+    <tr>
+      <td>ZIP Code:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["zipcode"]}' id='update-zipcode'></td>
+      <td>Country:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["country"]}' id='update-country'></td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        <h5 class='text-center'>Person Information</h5>
+      </td>
+    </tr>
+    <tr>
+      <td>Prefix</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["prefix"]}' id='update-prefix'></td>
+      <td>Title</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["title"]}' id='update-title'></td>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["first_name"]}' id='update-fname'></td>
+      <td>Last Name</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["last_name"]}' id='update-lname'></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["email"]}' id='update-email'></td>
+    </tr>
+    <tr>
+      <td>Contact Number:</td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["contact_number"]}' id='update-contact'></td>
+    </tr>
+    <tr>
+      <td colspan='4'>
+        <h5 class='text-center'>Hotel Specifications</h5>
+      </td>
+    </tr>
+    <tr>
+      <td>No. of Rooms</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["number_of_rooms"]}' id='update-room'></td>
+      <td>Hotel Class</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["hotel_class"]}' id='update-class'></td>
+    </tr>
+    <tr>
+      <td>ADR</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["adr"]}' id='update-adr'></td>
+      <td>Type of Hotel:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["type_of_hotel"]}' id='update-type'></td>
+    </tr>
+    <tr>
+      <td>Services:</td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["services"]}' id='update-services'></td>
+    </tr>
+    <tr>
+      <td>Ownership:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["ownership"]}' id='update-ownership'></td>
+      <td>Chain Name:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["chain_name"]}' id='update-chain'></td>
+    </tr>
+    <tr>
+      <td>Facebook URL:</td>
+      <td colspan='3'><input type='text' style='width: 100%;' value = '{$row2["facebook_url"]}' id='update-fburl'></td>
+    </tr>
+    <tr>
+      <td>Alexa Rank:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["alexa_rank"]}' id='update-alexa'></td>
+      <td>monthly Visitor:</td>
+      <td><input type='text' style='width: 100%;' value = '{$row2["monthly_visitor"]}' id='update-visitors'></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+     <td><input type='hidden' value = '{$row2["data_id"]}' id ='data-id' ></td>
+      <td><input type='submit' id='update-submit' value='Update'></td>
+    </tr>
 
-            ";
+      ";
     }
   }
   echo $output2;
@@ -403,19 +408,13 @@ if (isset($_POST['insert-submit'])) {
   $alexa_rank = $_POST['insert-alexa'];
   $monthly_visitor = $_POST['insert-visitors'];
 
-  // $sql5 = "INSERT INTO hotel (hrms,ats,crm,erp,pos,rms,cm,pms,ibe,crs,hotel_name,website,country,street,city,state,zipcode,prefix,first_name,last_name,title,email,contact_number, number_of_rooms, hotel_clas, adr, services,type_of_hotel,ownership,chain_name,facebook_url,alexa_rank,monthly_visitor) VALUES ('$hrms','$ats' ,'$crm' ,'$erp','$pos','$rms','$cm','$pms','$ibe','$crs','$hotel_name','$website','$country','$street','$city','$state','$zipcode','$prefix','$first_name','$last_name','$title','$email','$contact_number','$number_of_rooms','$hotel_class','$adr','$services','$type_of_hotel','$ownership','$chain_name','$facebook_url','$alexa_rank','$monthly_visitor');";
+  $sql5 = "INSERT INTO hotel (hrms,ats,crm,erp,pos,rms,cm,pms,ibe,crs,hotel_name,website,country,street,city,hotel.state,zipcode,prefix,first_name,last_name,title,email,contact_number,number_of_rooms, hotel_class, adr, services,type_of_hotel,hotel.ownership,chain_name,facebook_url,alexa_rank,monthly_visitor) VALUES ('$hrms','$ats','$crm' ,'$erp','$pos','$rms','$cm','$pms','$ibe','$crs','$hotel_name','$website','$country','$street','$city','$state','$zipcode','$prefix','$first_name','$last_name','$title','$email','$contact_number','$number_of_rooms','$hotel_class','$adr','$services','$type_of_hotel','$ownership','$chain_name','$facebook_url','$alexa_rank','$monthly_visitor');";
 
-  $sql5 = "INSERT INTO hotel (hrms,ats,crm,erp,pos,rms,cm,pms,ibe,crs,hotel_name,website,country,street,city,hotel.state,zipcode,prefix,first_name,last_name,title,email,contact_number,number_of_rooms, hotel_class, adr, services,type_of_hotel,hotel.ownership,chain_name,facebook_url,alexa_rank,monthly_visitor) VALUES ('$hrms','$ats','$crm' ,'$erp','$pos','$rms','$cm','$pms','$ibe','$crs','$hotel_name','$website','$country','$street','$city','$state','$zipcode','$prefix','$first_name','$last_name','$title','$email','$contact_number','$number_of_rooms','$hotel_class','$adr','$services','$type_of_hotel','$ownership','$chain_name','$facebook_url','$alexa_rank','$monthly_visitor'); ";
   $result5 = mysqli_query($conn, $sql5);
   if ($result5) {
     echo header('Location:../hotels.php');
   } else {
     echo "Something Went Wrong.Please Contact IT team.";
   }
-
-  
-
-
-
 
 }

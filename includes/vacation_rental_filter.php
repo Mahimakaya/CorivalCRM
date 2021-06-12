@@ -4,8 +4,8 @@
 </div>
 
 <div id="location_filterbar" class="filterbar" style="display: none;">
-   <!-- ----------------------------------------------- -->
-   <div class="d-grid gap-2">
+    <!-- ----------------------------------------------- -->
+    <div class="d-grid gap-2">
         <button id="country_list" class="btn filterbtn mt-2">Country</button>
     </div>
 
@@ -28,8 +28,8 @@
         </ul>
     </div>
 
-        <!-- ----------------------------------------------- -->
-        <div class="d-grid gap-2">
+    <!-- ----------------------------------------------- -->
+    <div class="d-grid gap-2">
         <button id="state_list" class="btn filterbtn mt-2">State</button>
     </div>
 
@@ -52,8 +52,8 @@
         </ul>
     </div>
 
-        <!-- ----------------------------------------------- -->
-        <div class="d-grid gap-2">
+    <!-- ----------------------------------------------- -->
+    <div class="d-grid gap-2">
         <button id="city_list" class="btn filterbtn mt-2">City</button>
     </div>
 
@@ -122,7 +122,7 @@
         <label for="to">To</label>
     </div>
     <div class="d-grid gap-2">
-        <button  class="m-2 btn filter_check">Search</button>
+        <button class="m-2 btn filter_check">Search</button>
     </div>
 
 </div>
@@ -136,7 +136,7 @@
 </div>
 
 <div id="technology_filterbar" class="filterbar mt-2" style="display: none;">
-<ul class="list-group">
+    <ul class="list-group">
         <?php
         $sql = "SELECT DISTINCT pms FROM vacation_rental ORDER BY pms";
         $result = mysqli_query($conn, $sql);
@@ -153,6 +153,22 @@
 
     </ul>
 
+</div>
+
+<div class="d-grid gap-2">
+    <a href="vacation_rental.php" id="clear_filter" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Clear Filters</a>
+</div>
+
+<div class="d-grid gap-2">
+    <a id="insert-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Insert New Data</a>
+</div>
+
+<div class="d-grid gap-2">
+    <a id="upload-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Upload Bulk Data</a>
+</div>
+
+<div class="d-grid gap-2">
+    <a id="generate-report-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Generate Report</a>
 </div>
 
 <!-- ========================================================= -->
@@ -181,9 +197,9 @@
                     country: country,
                     state: state,
                     city: city,
-                    from : from,
-                    to : to
-                  
+                    from: from,
+                    to: to
+
                 },
                 success: function(response) {
                     $("#result").html(response);
@@ -192,12 +208,11 @@
 
         });
 
-        
+
         function get_min_value() {
             var small = Number.MIN_VALUE;
             var min = $("#from").val();
-            if(min != '')
-            {
+            if (min != '') {
                 small = min;
             }
             return small;
@@ -206,8 +221,7 @@
         function get_max_value() {
             var big = Number.MAX_VALUE;
             var max = $("#to").val();
-            if(max != '')
-            {
+            if (max != '') {
                 big = max;
             }
             return big;
@@ -222,6 +236,10 @@
             });
             return filterData;
         }
+
+
+
+
 
     });
 </script>

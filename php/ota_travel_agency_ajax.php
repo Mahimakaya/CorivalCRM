@@ -66,6 +66,8 @@ if (isset($_POST['action'])) {
             <td>" . $row['title'] . "</td>
             <td>" . $row['email'] . "</td>
             <td>" . $row['contact_number'] . "</td>
+            <td><button type='button' class='edit-btn btn btn-sm btn-info p-1' data-eid =  " . $row['data_id'] . ">Update</button></td>
+            <td><button type='button' class='delete-btn btn btn-sm btn-danger p-1' data-id =  " . $row['data_id'] . ">Delete</button></td>
         </tr>";
         }
     } else {
@@ -79,4 +81,157 @@ if (isset($_POST['action'])) {
     echo $output;
 } 
 
-?>
+// delete data 
+
+if (isset($_POST['dlt_action'])) {
+    $id = $_POST['data_id'];
+    $sql2 = "DELETE FROM ota_travel_agency WHERE data_id = {$id} ";
+    $result2 = mysqli_query($conn, $sql2);
+    if ($result2) {
+      echo 1;
+    } else {
+      echo 0;
+    }
+  }
+  // return data in form for update 
+  
+  
+  if (isset($_POST['formfill'])) {
+    $eid = $_POST['eid'];
+    $sql3 = "SELECT * FROM ota_travel_agency WHERE data_id = {$eid}";
+    $result3 = mysqli_query($conn, $sql3);
+    $output2 = " hiii";
+    if (mysqli_num_rows($result3) > 0) {
+      while ($row2 = mysqli_fetch_assoc($result3)) {
+        $output2 .= "
+          <tr>
+          <td>Technology:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['technology']}' id='update-technology'></td>
+          <td>Remark:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['remark']}' id='update-remark'></td>
+          </tr>
+          <tr>
+          <td>Company Name: </td>
+          <td colspan='3'><input type='text' style='width: 100%;' value='{$row2['company_name']}'  id='update-company_name'></td>
+        </tr>
+         <tr>
+          <td>Website:</td>
+          <td colspan='3'><input type='text' style='width: 100%;' value='{$row2['website']}' id='update-website'></td>
+        </tr>
+        <tr>
+          <td>No.of Properties:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['no_of_property']}' id='update-no_of_property'></td>
+        </tr>
+        <tr>
+          <td colspan='4'>
+            <h5 class='text-center'>Address</h5>
+          </td>
+        </tr>
+        <td>Street:</td>
+          <td colspan='3'> <input type='text' style='width: 100%;' value='{$row2['street']}'  id='update-street'></td>
+        </tr>
+        <tr>
+         <td>State/Province:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['state']}'  id='update-state'></td>
+          <td>City:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['city']}' id='update-city'></td>
+          </tr>
+          <tr>
+          <td>Country:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['country']}'  id='update-country'></td>
+          <td>ZIP Code:</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['zipcode']}' id='update-zipcode'></td> 
+        </tr>
+        <tr>
+          <td colspan='4'>
+            <h5 class='text-center'>Person Information</h5>
+          </td>
+        </tr>
+        <tr>
+          <td>First Name</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['first_name']}' id='update-fname'></td>
+          <td>Last Name</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['last_name']}' id='update-lname'></td>
+        </tr>
+        <tr>
+         <td>Title</td>
+          <td><input type='text' style='width: 100%;' value='{$row2['title']}' id='update-title'></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td colspan='3'><input type='text' style='width: 100%;' value='{$row2['email']}' id='update-email'></td>
+        </tr>
+        <tr>
+          <td>Contact Number:</td>
+          <td colspan='3'><input type='text' style='width: 100%;' value='{$row2['contact_number']}' id='update-contact'></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><input type='hidden' value = '{$row2["data_id"]}' id ='data-id' ></td>
+          <td><input type='submit' id='update-submit' value='Update New Data'></td>
+        </tr>
+          ";
+      }
+    }
+    echo $output2;
+  }
+  
+  
+  //update data
+  
+  if (isset($_POST['update'])) {
+  
+    $data_id = $_POST['data_id'];
+    $technology = $_POST['technology'];
+    $remark = $_POST['remark'];
+    $company_name = $_POST['company_name'];
+    $website = $_POST['website'];
+    $properties = $_POST['no_of_property'];
+    $country = $_POST['country'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zipcode = $_POST['zipcode'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $title = $_POST['title'];
+    $email = $_POST['email'];
+    $contact_number = $_POST['contact_number'];
+  
+    $sql4 = "UPDATE ota_travel_agency SET technology= '{$technology}' ,remark = '{$remark}' ,company_name ='{$company_name}' ,website = '{$website}' ,no_of_property = '{$properties}' ,country = '{$country}' ,street = '{$street}' ,city = '{$city}' ,state = '{$state}' ,zipcode = '{$zipcode}' ,first_name = '{$first_name}' ,last_name = '{$last_name}' ,title = '{$title}' ,email = '{$email}' ,contact_number = '{$contact_number}' WHERE data_id = '{$data_id}'";
+  
+    $result4 = mysqli_query($conn, $sql4);
+    if ($result4) {
+      echo 1;
+    } else {
+      echo mysqli_error($conn);
+    }
+  }
+  // insert new data 
+  
+  if (isset($_POST['insert-submit'])) {
+    $technology = $_POST['insert-technology'];
+    $remark = $_POST['insert-remark'];
+    $company_name = $_POST['insert-company_name'];
+    $website = $_POST['insert-website'];
+    $properties = $_POST['insert-properties'];
+    $country = $_POST['insert-country'];
+    $street = $_POST['insert-street'];
+    $city = $_POST['insert-city'];
+    $state = $_POST['insert-state'];
+    $zipcode = $_POST['insert-zipcode'];
+    $first_name = $_POST['insert-fname'];
+    $last_name = $_POST['insert-lname'];
+    $title = $_POST['insert-title'];
+    $email = $_POST['insert-email'];
+    $contact_number = $_POST['insert-contact'];
+  
+    $sql5 = "INSERT INTO `ota_travel_agency` (`technology`,`remark`, `company_name`, `website`, `no_of_property`, `country`, `street`, `city`, `state`, `zipcode`, `first_name`, `last_name`, `title`, `email`, `contact_number`) VALUES ('$technology','$remark', '$company_name', '$website', '$properties', '$country', '$street', '$city', '$state', '$zipcode', '$first_name', '$last_name', '$title', '$email', '$contact_number')";
+    $result5 = mysqli_query($conn, $sql5);
+    if ($result5) {
+      echo header('Location:../ota_travel_agency.php');
+    } else {
+      echo mysqli_error($conn);
+    }
+  }

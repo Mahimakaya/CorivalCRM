@@ -443,8 +443,9 @@
 </div>
 
 <div class="d-grid gap-2">
-    <a  id="insert-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Insert New Data</a>
+    <a id="insert-btn" class=" btn" style="font-weight: bold;font-style:italic;color:blue">Insert New Data</a>
 </div>
+
 
 
 <!-- ========================================================= -->

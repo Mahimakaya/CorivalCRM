@@ -30,81 +30,9 @@
   <link rel="stylesheet" href="css/hotel_filter.css">
   <script src="js/hotel_filter.js"></script>
 
+  <!-- Insert form CSS -->
+  <link rel="stylesheet" href="css/insert_form.css">
 
-
-  <style>
-    #modal {
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 100;
-      overflow-y: scroll;
-      display: none;
-    }
-
-    #modal-form {
-      background: #fff;
-      width: 60%;
-      position: relative;
-      top: 10%;
-      left: calc(50% - 30%);
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    #close-btn {
-      background: red;
-      color: white;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      border-radius: 50%;
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      cursor: pointer;
-    }
-
-    #insert-modal {
-      background: rgba(0, 0, 0, 0.7);
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 100;
-      overflow-y: scroll;
-      display: none;
-    }
-
-    #insert-modal-form {
-      background: #fff;
-      width: 60%;
-      position: relative;
-      top: 10%;
-      left: calc(50% - 30%);
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    #insert-close-btn {
-      background: red;
-      color: white;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      border-radius: 50%;
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      cursor: pointer;
-    }
-  </style>
 
   <title>Hotel</title>
 </head>
@@ -262,44 +190,49 @@
             </tr>
             <tr>
               <td>HRMS:</td>
-              <td><input type='text' name='insert-hrms'></td>
+              <td><input type='text' style='width: 100%;' name='insert-hrms'></td>
               <td>ATS:</td>
-              <td><input type='text' name='insert-ats'></td>
+              <td><input type='text' style='width: 100%;' name='insert-ats'></td>
             </tr>
             <tr>
               <td>CRM:</td>
-              <td><input type='text' name='insert-crm'></td>
+              <td><input type='text' style='width: 100%;' name='insert-crm'></td>
               <td>ERP:</td>
-              <td><input type='text' name='insert-erp'></td>
+              <td><input type='text' style='width: 100%;' name='insert-erp'></td>
             </tr>
             <tr>
               <td>POS:</td>
-              <td><input type='text' name='insert-pos'></td>
+              <td><input type='text' style='width: 100%;' name='insert-pos'></td>
               <td>RMS:</td>
-              <td><input type='text' name='insert-rms'></td>
+              <td><input type='text' style='width: 100%;' name='insert-rms'></td>
             </tr>
             <tr>
               <td>CM:</td>
-              <td><input type='text' name='insert-cm'></td>
+              <td><input type='text' style='width: 100%;' name='insert-cm'></td>
               <td>PMS:</td>
-              <td><input type='text' name='insert-pms'></td>
+              <td><input type='text' style='width: 100%;' name='insert-pms'></td>
             </tr>
             <tr>
               <td>IBE:</td>
-              <td><input type='text' name='insert-ibe'></td>
+              <td><input type='text' style='width: 100%;' name='insert-ibe'></td>
               <td>CRS:</td>
-              <td><input type='text' name='insert-crs'></td>
+              <td><input type='text' style='width: 100%;' name='insert-crs'></td>
+            </tr>
+            <tr>
+              <td colspan='4' class='text-center'>
+                <h5>Hotel Info</h5>
+              </td>
             </tr>
 
             <tr>
               <td>Hotel Name: </td>
-              <td colspan='3'><input type='text' name='insert-hname'></td>
+              <td colspan='3'><input type='text' style='width: 100%;' name='insert-hname'></td>
             </tr>
 
 
             <tr>
-              <td>Website</td>
-              <td colspan='3'><input type='text' name='insert-website'></td>
+              <td>Website:</td>
+              <td colspan='3'><input type='text' style='width: 100%;' name='insert-website'></td>
             </tr>
             <tr>
               <td colspan='4'>
@@ -308,19 +241,19 @@
             </tr>
             <tr>
               <td>Street:</td>
-              <td colspan='3'> <input type='text' name='insert-street'></td>
+              <td colspan='3'> <input type='text' style='width: 100%;' name='insert-street'></td>
             </tr>
             <tr>
               <td>City:</td>
-              <td><input type='text' name='insert-city'></td>
+              <td><input type='text' style='width: 100%;' name='insert-city'></td>
               <td>State/Province:</td>
-              <td><input type='text' name='insert-state'></td>
+              <td><input type='text' style='width: 100%;' name='insert-state'></td>
             </tr>
             <tr>
               <td>ZIP Code:</td>
-              <td><input type='text' name='insert-zipcode'></td>
+              <td><input type='text' style='width: 100%;' name='insert-zipcode'></td>
               <td>Country:</td>
-              <td><input type='text' name='insert-country'></td>
+              <td><input type='text' style='width: 100%;' name='insert-country'></td>
             </tr>
             <tr>
               <td colspan='4'>
@@ -329,23 +262,23 @@
             </tr>
             <tr>
               <td>Prefix</td>
-              <td><input type='text' name='insert-prefix'></td>
+              <td><input type='text' style='width: 100%;' name='insert-prefix'></td>
               <td>Title</td>
-              <td><input type='text' name='insert-title'></td>
+              <td><input type='text' style='width: 100%;' name='insert-title'></td>
             </tr>
             <tr>
               <td>First Name</td>
-              <td><input type='text' name='insert-fname'></td>
+              <td><input type='text' style='width: 100%;' name='insert-fname'></td>
               <td>Last Name</td>
-              <td><input type='text' name='insert-lname'></td>
+              <td><input type='text' style='width: 100%;' name='insert-lname'></td>
             </tr>
             <tr>
               <td>Email:</td>
-              <td colspan='3'><input type='text' name='insert-email'></td>
+              <td colspan='3'><input type='text' style='width: 100%;' name='insert-email'></td>
             </tr>
             <tr>
               <td>Contact Number:</td>
-              <td colspan='3'><input type='text' name='insert-contact'></td>
+              <td colspan='3'><input type='text' style='width: 100%;' name='insert-contact'></td>
             </tr>
             <tr>
               <td colspan='4'>
@@ -354,35 +287,35 @@
             </tr>
             <tr>
               <td>No. of Rooms</td>
-              <td><input type='text' name='insert-room'></td>
+              <td><input type='text' style='width: 100%;' name='insert-room'></td>
               <td>Hotel Class</td>
-              <td><input type='text' name='insert-class'></td>
+              <td><input type='text' style='width: 100%;' name='insert-class'></td>
             </tr>
             <tr>
               <td>ADR</td>
-              <td><input type='text' name='insert-adr'></td>
+              <td><input type='text' style='width: 100%;' name='insert-adr'></td>
               <td>Type of Hotel:</td>
-              <td><input type='text' name='insert-type'></td>
+              <td><input type='text' style='width: 100%;' name='insert-type'></td>
             </tr>
             <tr>
               <td>Services:</td>
-              <td colspan='3'><input type='text' services name='insert-services'></td>
+              <td colspan='3'><input type='text' style='width: 100%;' services name='insert-services'></td>
             </tr>
             <tr>
               <td>Ownership:</td>
-              <td><input type='text' name='insert-ownership'></td>
+              <td><input type='text' style='width: 100%;' name='insert-ownership'></td>
               <td>Chain Name:</td>
-              <td><input type='text' name='insert-chain'></td>
+              <td><input type='text' style='width: 100%;' name='insert-chain'></td>
             </tr>
             <tr>
               <td>Facebook URL:</td>
-              <td colspan='3'><input type='text' name='insert-fburl'></td>
+              <td colspan='3'><input type='text' style='width: 100%;' name='insert-fburl'></td>
             </tr>
             <tr>
               <td>Alexa Rank:</td>
-              <td><input type='text' name='insert-alexa'></td>
+              <td><input type='text' style='width: 100%;' name='insert-alexa'></td>
               <td>monthly Visitor:</td>
-              <td><input type='text' name='insert-visitors'></td>
+              <td><input type='text' style='width: 100%;' name='insert-visitors'></td>
             </tr>
             <tr>
               <td></td>
@@ -538,7 +471,7 @@
         var ownership = $("#update-ownership").val();
         var chain_name = $("#update-chain").val();
         var facebook_url = $("#update-fburl").val();
-        var alexa_rank = $("#update-alex").val();
+        var alexa_rank = $("#update-alexa").val();
         var monthly_visitor = $("#update-visitors").val();
 
         var update = "update";
@@ -585,11 +518,15 @@
           },
 
           success: function(data) {
-            $("#modal").hide();
-            location.reload();
+            if(data == 1)
+          {$("#modal").hide();
+          location.reload();}
+          else alert(data);
           }
         });
       });
+
+
 
       // insert functionality 
 
